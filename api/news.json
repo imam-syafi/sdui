@@ -1,26 +1,12 @@
 {
   "templates": {
-    "text_block": {
+    "text_base": {
       "type": "text",
-      "font_size": 12,
-      "line_height": 15,
-      "text_alignment_horizontal": "center",
-      "text_alignment_vertical": "center",
-      "alignment_horizontal": "center",
-      "text_color": "#000000",
       "paddings": {
-        "top": 4,
-        "bottom": 4,
         "left": 8,
-        "right": 8
-      },
-      "width": {
-        "type": "fixed",
-        "value": 80
-      },
-      "height": {
-        "type": "fixed",
-        "value": 104
+        "top": 8,
+        "right": 8,
+        "bottom": 8
       },
       "background": [
         {
@@ -28,9 +14,10 @@
           "color": "#0E000000"
         }
       ],
-      "border": {
-        "corner_radius": 16
-      }
+      "font_size": 12,
+      "text_alignment_vertical": "center",
+      "text_alignment_horizontal": "center",
+      "text_color": "#000000"
     },
     "title": {
       "type": "text",
@@ -54,7 +41,7 @@
     }
   },
   "card": {
-    "log_id": "sample_card",
+    "log_id": "grid",
     "states": [
       {
         "state_id": 0,
@@ -68,46 +55,79 @@
           "items": [
             {
               "type": "title",
-              "text": "Gallery"
+              "text": "Table"
             },
             {
               "type": "subtitle",
-              "text": "Displays elements with any content, not just images. It lets you set the distance between adjacent elements.",
+              "text": "Elements are arranged in rows and columns.\n\nCells in rows and columns can be merged: in the example, element 1 merges 2 cells vertically and element 4 merges 2 cells horizontally. There are 2 columns total in the table.",
               "margins": {
                 "bottom": 24
               }
             },
             {
-              "type": "gallery",
+              "type": "grid",
+              "width": {
+                "type": "match_parent"
+              },
               "height": {
-                "type": "fixed",
-                "value": 120
+                "type": "wrap_content"
               },
-              "paddings": {
-                "left": 16,
-                "right": 16
-              },
-              "item_spacing": 16,
+              "alignment_horizontal": "center",
+              "column_count": 2,
               "items": [
                 {
-                  "type": "text_block",
-                  "text": "Item 0"
+                  "type": "text_base",
+                  "width": {
+                    "type": "match_parent",
+                    "weight": 1
+                  },
+                  "height": {
+                    "type": "fixed",
+                    "value": 124
+                  },
+                  "margins": {
+                    "right": 4,
+                    "bottom": 4
+                  },
+                  "row_span": 2,
+                  "text": "1"
                 },
                 {
-                  "type": "text_block",
-                  "text": "Item 1"
+                  "type": "text_base",
+                  "width": {
+                    "type": "match_parent",
+                    "weight": 1
+                  },
+                  "height": {
+                    "type": "match_parent"
+                  },
+                  "margins": {
+                    "bottom": 4
+                  },
+                  "text": "2"
                 },
                 {
-                  "type": "text_block",
-                  "text": "Item 2"
+                  "type": "text_base",
+                  "width": {
+                    "type": "match_parent",
+                    "weight": 1
+                  },
+                  "height": {
+                    "type": "match_parent"
+                  },
+                  "margins": {
+                    "bottom": 4
+                  },
+                  "text": "3"
                 },
                 {
-                  "type": "text_block",
-                  "text": "Item 3"
-                },
-                {
-                  "type": "text_block",
-                  "text": "Item 4"
+                  "type": "text_base",
+                  "width": {
+                    "type": "match_parent",
+                    "weight": 1
+                  },
+                  "column_span": 2,
+                  "text": "4"
                 }
               ]
             }
